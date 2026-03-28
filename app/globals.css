@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #fbc02d;
+  --color-surface: rgb(18, 18, 18);
+  --color-hover: #272727;
+
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 960px;
+  --breakpoint-lg: 1264px;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Gold scrollbar for horizontal scroll containers */
+.scrollbar-gold::-webkit-scrollbar {
+  height: 0.75rem;
+  width: 0.75rem;
+  background: #000;
+}
+
+.scrollbar-gold::-webkit-scrollbar-thumb:horizontal {
+  background: #fbc02d;
+  border-radius: 10px;
+}
+
+/* Firefox scrollbar support */
+.scrollbar-gold {
+  scrollbar-color: #fbc02d #000;
+  scrollbar-width: thin;
+}
