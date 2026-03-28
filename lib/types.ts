@@ -35,9 +35,9 @@ export interface TMDBTvShow {
   episode_run_time: number[];
   genres: Genre[];
   created_by: { id: number; name: string }[];
-  credits: {
-    cast: CastCredit[];
-    crew: CrewCredit[];
+  aggregate_credits: {
+    cast: AggregateCastCredit[];
+    crew: AggregateCrewCredit[];
   };
 }
 
@@ -72,6 +72,36 @@ export interface CrewCredit {
   department: string;
   profile_path: string | null;
   credit_id: string;
+}
+
+export interface AggregateCastRole {
+  credit_id: string;
+  character: string;
+  episode_count: number;
+}
+
+export interface AggregateCastCredit {
+  id: number;
+  name: string;
+  profile_path: string | null;
+  order: number;
+  roles: AggregateCastRole[];
+  total_episode_count: number;
+}
+
+export interface AggregateCrewRole {
+  credit_id: string;
+  job: string;
+  episode_count: number;
+}
+
+export interface AggregateCrewCredit {
+  id: number;
+  name: string;
+  profile_path: string | null;
+  department: string;
+  roles: AggregateCrewRole[];
+  total_episode_count: number;
 }
 
 export interface PersonCastCredit {
