@@ -21,9 +21,14 @@ export default async function PersonPage({ params }: PageProps) {
     notFound();
   }
 
-  const castCredits = [...person.combined_credits.cast];
+  const knownForScore = (c: { vote_count: number; vote_average: number }) =>
+    c.vote_count * (c.vote_average / 10);
+
+  const castCredits = [...person.combined_credits.cast].sort(
+    (a, b) => knownForScore(b) - knownForScore(a),
+  );
   const crewCredits = [...person.combined_credits.crew].sort(
-    (a, b) => b.popularity - a.popularity,
+    (a, b) => knownForScore(b) - knownForScore(a),
   );
 
   return (

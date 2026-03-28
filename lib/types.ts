@@ -82,6 +82,8 @@ export interface PersonCastCredit {
   poster_path: string | null;
   media_type: "movie" | "tv";
   popularity: number;
+  vote_count: number;
+  vote_average: number;
   credit_id: string;
 }
 
@@ -94,6 +96,8 @@ export interface PersonCrewCredit {
   poster_path: string | null;
   media_type: "movie" | "tv";
   popularity: number;
+  vote_count: number;
+  vote_average: number;
   credit_id: string;
 }
 

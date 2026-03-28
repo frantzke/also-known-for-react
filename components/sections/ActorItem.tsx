@@ -13,7 +13,11 @@ interface ActorItemProps {
 
 export default function ActorItem({ actor }: ActorItemProps) {
   const router = useRouter();
-  const roles = actor.combined_credits?.cast || [];
+  const roles = [...(actor.combined_credits?.cast || [])].sort(
+    (a, b) =>
+      b.vote_count * (b.vote_average / 10) -
+      a.vote_count * (a.vote_average / 10),
+  );
   const hasNoRoles = roles.length === 0;
 
   const handleTitleClick = async (id: number, creditId: string) => {
