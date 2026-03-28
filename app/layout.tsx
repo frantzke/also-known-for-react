@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Also Known For",
   description: "Discover movies, TV shows, and actors",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/AKF-Logo.ico",
   },
 };
 
